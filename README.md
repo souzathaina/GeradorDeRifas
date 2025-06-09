@@ -25,7 +25,7 @@ O CSS inclui regras específicas para impressão (`@media print`), gerando bilhe
 
 ## 📸 Exemplo de Uso
 
-![Exemplo de rifa gerada](exemplo.png) <!-- opcional, se tiver imagem -->
+![Exemplo de rifa gerada](exemplo.png.png) <!-- opcional, se tiver imagem -->
 
 ---
 
