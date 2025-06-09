@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f0f8ff;
+    color: #0f3a51;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Formulário */
+form.form {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    background: #e3f2fd;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgb(15 58 81 / 0.2);
+}
+
+form.form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #0f3a51;
+}
+
+form.form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 2px solid #0096c7;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form.form input:focus {
+    outline: none;
+    border-color: #0077b6;
+    background-color: #d9eefd;
+}
+
+/* Botão padrão */
+.btn-padrao {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #0077b6, #0096c7);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.4s ease;
+    box-shadow: 0 5px 10px rgb(0 118 182 / 0.4);
+}
+
+.btn-padrao:hover {
+    background: linear-gradient(90deg, #005f8a, #0077b6);
+}
+
+/* Container dos bilhetes */
+.resultado {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* Separador vertical */
+.bilhete::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 50%;
+    width: 2px;
+    background: #0096c7;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Texto dentro dos bilhetes */
+.bilhete strong {
+    color: #0077b6;
+    font-weight: 700;
+}
+
+.bilhete .numero {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0096c7;
+    background: #d9eefd;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: fit-content;
+    letter-spacing: 2px;
+}
+
+/* Nome comprador com linha para preencher */
+.nome-comprador {
+    margin-top: 20px;
+}
+
+.nome-comprador label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0f3a51;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.linha-nome {
+    border-bottom: 2px dotted #000;
+    width: 100%;
+    max-width: 200px;
+    height: 1.5em;
+    margin-top: 4px;
+}
+
+/* Texto menor para canhoto */
+.canhoto em {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #0077b6;
+}
+
+/* Botão imprimir */
+button.btn-padrao {
+    max-width: 300px;
+    margin: 30px auto 0 auto;
+}
+.btn-voltar {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    background-color: #adb5bd;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #6c757d;
+}
+.ticket {
+  display: flex;
+  border: 1px dashed black;
+  width: 18cm; 
+  height: auto;
+  margin: 1rem auto;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 2px solid #0096c7;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgb(0 118 182 / 0.2);
+  overflow: hidden;
+}
+
+
+.esquerda, .direita {
+  width: 48%;
+    padding: 20px 25px;
+    position: relative;
+}
+
+.esquerda {
+  border-right: 2px dashed black;
+}
+
+
+/* Impressão */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+    color: black;
+  }
+
+  .btn-padrao,
+  form.form {
+    display: none;
+  }
+
+  .bilhete {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .bilhete::before {
+    background: black;
+  }
+
+  .principal,
+  .canhoto {
+    padding: 15px !important;
+  }
+
+  .linha-nome {
+    border-color: black;
+  }
+}
+
